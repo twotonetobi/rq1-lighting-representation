@@ -1,43 +1,63 @@
-# Decomposition method — preliminary outline
+# How the decomposition works
 
-This document describes the current engineering approach and its relationship to RQ1. It is a method outline, not executable software or a complete academic methods section. The reported checkpoint is 22 September 2026.
+This is a plain description of the current decomposition method. It is not runnable software and not a complete methods section. State as of September 2026.
 
-## From authored sources to structural evidence
+## The idea
 
-1. **Bind the inputs to provenance.** Preserve the authored console XML, mapped fixtures and existing audio structure as versioned source inputs. Keep record identity and provenance attached to derived evidence.
-2. **Model effective state over time.** Resolve source events, persistence, executor context and modeled output contributions. Explicit initial black matters. All 101 current Main sources use latest-takes-precedence behavior. A known recipe projection can be retained when native output cannot be proven, with that limitation recorded.
-3. **Separate maintained and changing structure.** Describe maintained looks, animated layers and transient reactions. Reaction observations can remain unresolved or source-only; apparently complete section measurements do not make every reaction resolved.
-4. **Describe recurrence and development.** Preserve recurring figure identity across pauses, with separate active passages. Record ordered development and within-show families without treating rare exact repetition as proof of restraint or of a designer's intention.
-5. **Summarize and compare.** Produce per-record fingerprints and corpus comparisons while retaining the detailed source links and uncertainty behind each interpretation.
+A show file stores what a designer authored, but not in the form a researcher needs. A single cue can change some luminaires and leave others running. An effect can keep moving underneath several cues. A look from the first chorus can come back, slightly changed, in the second. The decomposition turns an authored show into explicit layers over time, so each of these things becomes something one can count, compare and later generate.
 
-The completed checkpoint contains 101 decompositions, 101 independently reproduced fingerprints from fixed decomposition bytes, 5,050 pairwise comparisons and 39 required findings. Reproducing a fingerprint checks that interpretation's determinism. It is not an optical rendering test or an artistic-quality assessment.
+## Five steps
 
-## Counting units
+1. **Keep the sources and their origin together.** The authored console data, the mapped luminaires and the structure of the audio are kept as versioned inputs. Every derived observation keeps a link back to the source event it came from.
+2. **Work out what is active at every moment.** Source events, persistence and the playback context are resolved into an effective state over time. When several cues control the same parameter, the most recent one wins, as on the console. The show explicitly starts from black. Where the actual console output cannot be proven, a known projection is kept and the limitation is recorded.
+3. **Separate what holds from what moves.** The state is split into maintained looks, animated layers and short reactions such as accents. A reaction can stay unresolved or supported only by the source. A section that looks complete does not mean that every reaction in it is resolved.
+4. **Describe recurrence and development.** A recurring figure keeps its identity across pauses, while each active passage stays separate. The order in which a show develops is recorded, and so are families of related passages within a show. Rare exact repetition is not taken as proof of restraint or of what the designer intended.
+5. **Summarise and compare.** Each record gets a fingerprint, and records are compared with each other. The detailed source links and the uncertainty behind every interpretation stay attached.
 
-The preliminary totals are 101 source-show records, 1,338 section instances, 3,164 look-bearing main cues, 12,765 accent events and 569 within-show recurrence families. Main-cue counting excludes 2,635 authored no-op cues from 5,799 authored main cues. “Look-bearing” does not mean every cue is an optically distinct look. Accent counts concern source-model events; recurrence families are within-show groupings, not learned cross-corpus composition conventions.
+The current checkpoint contains 101 decompositions and 101 reproduced fingerprints, with 5,050 pairwise comparisons. Reproducing a fingerprint shows that the interpretation is deterministic. It is not a test of the rendered light and not a judgement of artistic quality.
 
-Records can share musical identities. Complete musical-identity groups must stay together in evaluation partitions, and cue-level observations are correlated. These counts therefore do not specify a model's effective independent sample size.
+## What the counts mean
 
-## How the donor-transfer prototype uses the evidence
+The decomposition yields 101 show records, 1,338 sections, 3,164 main cues that change the look, 12,765 accent events and 569 recurrence families within shows.
 
-The A15 prototype verifies a pinned fingerprint index and reads the selected donor's detailed interpretation. It builds occurrence-aware intent, checks source events against the pinned source inputs and adapts a primary donor structure to target timing, shape and reaction rules. A deterministic materializer writes editable recipes, Main sequences, reusable auxiliaries and Timecode.
+- The main-cue count leaves out cues that change nothing. It is 5,799 authored main cues minus 2,635 cues that change nothing.
+- A main cue that changes the look is not automatically a visually distinct look.
+- Accent events are events in the source model, and recurrence families are groupings within one show.
+- Some records share the same song. All records of one song stay together when the data is split for evaluation, and cues within a record are not independent observations.
 
-Detailed selected-donor evidence supports composition today. Corpus-wide composition priors derived from all 101 detailed fingerprints are future work. Only valid, indexed audio collections are eligible audio evidence; zero-filled diagnostic arrays are not. Unresolved or source-only reaction evidence is ineligible to guide generation.
+## How the prototype uses the decomposition
 
-Export and source audits check declared console realization. Musical appropriateness and optical continuity require separate review. A useful mismatch classification distinguishes audio evidence, musical interpretation, donor selection and realization.
+The current prototype is a donor transfer. For a new song, it picks one authored show as the donor. It reads the donor's decomposition, fits the donor's structure to the new song's timing and energy, and writes an editable show for the console.
 
-## Relationship to the proposed learned representation
+- Only audio from valid, indexed collections counts as audio evidence.
+- Reactions that are unresolved or supported only by the source are not used to guide generation.
+- Technical checks confirm that the console receives what was declared. Whether the show fits the music is judged separately, in a musical review that is still ongoing.
+- Learning composition conventions from all 101 decompositions at once is future work.
 
-The poster proposes L1 external context; L2 dramaturgic arc; L3 visual section role; L4 recurrence and variation; L5 cue and accent timing; L6 cue content; L7 movement; L8 accents; L9 transitions; and L10 cross-cutting validation. L2–L9 are eight proposed content layers, not eight established independent learned factors. Engineering simultaneous-output layers do not automatically map onto these academic temporal layers.
+## Relation to the proposed layers
 
-For each academic target, the audit must specify meaning, provenance, output form, granularity, uncertainty and supervision eligibility. Targets should distinguish observed, deterministically derived, modeled-with-assumptions and unresolved evidence.
+The poster proposes ten layers.
 
-The proposed shared backbone, typed dependencies, masking, validation and deterministic export have not established an advantage over matched flat or collapsed alternatives. Selected-donor transfer is not evidence of learned generalisation. Editable console output is not proof of artistic success, practitioner acceptance, human-valued editability or recovery of designers' actual reasons.
+1. L1, the context.
+2. L2, the dramaturgic arc of the whole song.
+3. L3, the visual role of each section.
+4. L4, recurrence and variation.
+5. L5, the timing of cues and accents.
+6. L6, cue content.
+7. L7, movement.
+8. L8, accents.
+9. L9, transitions.
+10. L10, a validation step that checks across all of them.
 
-## Next research steps
+L2 to L9 are proposed content layers, not established independent factors. The layers of the decomposition do not automatically map one to one onto these proposed layers. For every proposed layer, the research has to state what it means, where it comes from, what form it takes and how certain it is.
 
-Complete the academic corpus audit and layer contract; evaluate reconstruction through a declared representation bottleneck; test generation on held-out musical identities; compare matched flat, collapsed and typed models; and test selective regeneration with protected-region stability. Experimental results remain pending.
+## Next steps
 
-A future release should make the independently documented method, configurations and appropriate synthetic examples inspectable without exposing the private corpus. No runnable implementation is included in this repository.
+1. Rebuild authored shows from the smaller layered representation.
+2. Generate that representation for unseen songs.
+3. Compare the layered model with equally sized flat and collapsed models.
+4. Regenerate a selected layer or time region while protected content stays unchanged.
 
-[Preliminary poster](../poster/preliminary-poster.pdf) · [Project overview](../README.md) · [Website](https://wursthorn.org/) · [Contact](https://wursthorn.org/contact)
+No experimental results for these steps exist yet.
+
+[Poster](../poster/preliminary-poster.pdf) · [Project overview](../README.md) · [wursthorn.org](https://wursthorn.org/) · [Contact](https://wursthorn.org/contact)
