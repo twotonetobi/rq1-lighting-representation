@@ -31,9 +31,9 @@ These numbers are counting units. They are not independent training examples.
 | | |
 |---|---|
 | ![Digitalism, Pogo](images/pogo.jpg) | ![Justice, Genesis](images/genesis.jpg) |
-| **Digitalism, Pogo.** A new song. The corpus has no authored show for it. | **Justice, Genesis.** The corpus also holds a designer's own show for this song, so this is not an example of a new song. The prototype transferred a different donor show. |
+| **Digitalism, Pogo.** A new song. The dataset has no authored show for it. | **Justice, Genesis.** The dataset also holds a designer's own show for this song, so this is not an example of a new song. The prototype transferred a different donor show. |
 
-The top image shows **Billie Eilish, bad guy**, which is also a new song with no authored show in the corpus.
+The top image shows **Billie Eilish, bad guy**, which is also a new song with no authored show in the dataset.
 
 **A proposed learned generator.** This is the next step and has no results yet. Three model families are candidates. The first is one masked model for all layers. The second plans the upper layers first and then realises the details. The third is a cascade of small diffusion models. A small matched pilot will choose between them.
 
@@ -64,4 +64,4 @@ The show files, the decomposition software and the internal research notes are p
 
 ## Contact
 
-Tobias Wursthorn, CEADS Research School, HAW Hamburg. Visit [wursthorn.org](https://wursthorn.org/) or use the [contact page](https://wursthorn.org/contact).
+Tobias Wursthorn, CEADS Research School, HAW Hamburg. Email [tobias.wursthorn@haw-hamburg.de](mailto:tobias.wursthorn@haw-hamburg.de), visit [wursthorn.org](https://wursthorn.org/) or use the [contact page](https://wursthorn.org/contact).
