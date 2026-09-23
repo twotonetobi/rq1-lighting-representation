@@ -39,9 +39,16 @@ The top image shows **Billie Eilish, bad guy**, which is also a new song with no
 
 ## The research question
 
-Can a hierarchy-aware audio-conditioned model generate an addressable, typed representation of professional concert-lighting structure and console semantics for unseen songs, within a fixed production environment, such that selected layers or temporal fractions can be regenerated while protected content stays stable?
+Can a hierarchy-aware audio-conditioned model generate an addressable, layered representation of professional concert-lighting structure and console semantics for unseen songs, within a fixed production environment, such that selected layers or temporal fractions can be regenerated while protected content stays stable?
 
-"Typed" means that each layer is its own kind of object. The arc of a song is a trajectory, a section role is a state, a recurrence is a relation between sections, and cue timing is a sequence of events. "Unseen" means that no recording of the same musical work is used for training.
+Four hypotheses follow from this question. Each is tested separately.
+
+- **H1 Representational adequacy.** Authored shows are encoded into the smaller layered representation and rebuilt from it.
+- **H2 Predictive adequacy.** The representation is generated from an unseen song's audio, musical structure and context.
+- **H3 Hierarchy utility.** Predicting each layer from the layers it depends on beats equally sized flat and collapsed models.
+- **H4 Intervention integrity.** A selected layer or time region is regenerated while everything declared as protected stays unchanged.
+
+"Unseen" means that no recording of the same musical work is used for training.
 
 ## What is not claimed
 
